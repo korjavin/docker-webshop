@@ -9,6 +9,7 @@ RUN mkdir -p /var/www && cd /var/www && git clone https://github.com/korjavin/mo
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-setuptools && easy_install supervisor
 
+RUN cd /tmp && git clone https://github.com/Supervisor/supervisor.git --depth=1 && cd supervisor && python setup.py install
 
 RUN mkdir /var/log/supervisor
 ADD main.conf /etc/supervisor/supervisord.conf
