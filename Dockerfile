@@ -10,8 +10,6 @@ RUN mkdir -p /var/www && cd /var/www && git clone https://github.com/korjavin/mo
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 
-EXPOSE 9090
-
 VOLUME ["/var/www/mojo/web_shop/"]
 VOLUME ["/etc/cron.d/"]
 
